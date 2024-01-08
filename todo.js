@@ -17,9 +17,9 @@ var TodoStatus;
     TodoStatus[TodoStatus["Completed"] = 2] = "Completed";
 })(TodoStatus || (TodoStatus = {}));
 // Example todo items
-var todo1 = { id: 1, task: "Complete assignment", status: TodoStatus.Pending };
-var todo2 = { id: 2, task: "Review code", status: TodoStatus.InProgress };
-var todo3 = { id: 3, task: "Submit report", status: TodoStatus.Completed };
+var todo1 = { id: 1, task: "Completed", status: TodoStatus.Pending };
+var todo2 = { id: 2, task: "Reviewed", status: TodoStatus.InProgress };
+var todo3 = { id: 3, task: "Submitted", status: TodoStatus.Completed };
 // Function to update todo status
 function updateTodoStatus(todo, newStatus) {
     return __assign(__assign({}, todo), { status: newStatus });
