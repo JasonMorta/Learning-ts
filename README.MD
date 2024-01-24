@@ -61,7 +61,7 @@ following command in your terminal in the project directory:
 ```node  
   tsc <file-name>.ts
 ```
-Running **tsc** without any arguments will compile all .ts file in the current directory.
+❗Running only ` tsc ` without any arguments will compile all .ts file in the current directory.❗
 
 ## Auto-Compile a TypeScript File
 Enable automatic compilation of a TypeScript file with 
