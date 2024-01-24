@@ -1,9 +1,6 @@
 {
 
     
-
-
-
 //! type aliases
 
 // define a tuple type. Tuple's are fixed length arrays where each element has a fixed type
