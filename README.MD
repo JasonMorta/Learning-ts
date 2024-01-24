@@ -33,8 +33,8 @@ project's needs. For example, you might want to set the outDir
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "outDir": "./dist",        // Adjust this to your preferred output directory
-    "rootDir": "./src",       // Adjust this to your source code directory
+    "outDir": "./dist",        // You will need to create this folder in your project
+    "rootDir": "./src",       // You will need to create this folder in your project
     // ... other compiler options
   },
   // ... other configuration options
@@ -61,6 +61,7 @@ following command in your terminal in the project directory:
 ```node  
   tsc <file-name>.ts
 ```
+Running **tsc** without any arguments will compile all .ts file in the current directory.
 
 ## Auto-Compile a TypeScript File
 Enable automatic compilation of a TypeScript file with 
