@@ -1,6 +1,8 @@
 
 # TypeScript Configuration and Build Process
 
+
+# Section 1
 ## Create a TypeScript Configuration File for Your Project
 When setting up a TypeScript project, it's crucial to 
 create a tsconfig.json file to manage compilation settings. 
@@ -46,7 +48,7 @@ Save your changes.
 Ensure that your tsconfig.json file is correctly configured for your 
 project structure and requirements.
 
-
+# Section 2
 ## Managing Multiple TS Projects
 If your workspace includes multiple TS projects, 
 ensure each project has its own tsconfig.json file 
@@ -77,34 +79,58 @@ modification.
 - Upon detecting changes, the compiler automatically recompiles 
 the modified TypeScript file without the need for manual intervention.
 
+---------------------------------------------------------------------------------
 ## Auto-Run Compiled JavaScript Files(Optional)
-If you want to automatically run compiled JavaScript 
-files after each compilation, use the following command:
+If you want to automatically run compiled JavaScript files after each compilation, we need to install a node module to achieve this functionality.
+
+1. **Initialize a Node.js Project:**
+- Open your terminal or command prompt.
+- Navigate to your project's root directory using the cd command.
+- Run the following command to initialize a new Node.js project. Follow the prompts or press Enter to accept the default values.
 ```node  
-  node <file-name>.js -w
+npm init
+
+```
+This command will generate a package.json file.
+
+2. **Install TypeScript as a Dependency:**
+- Install TypeScript as a development dependency by running the following command:
+```node
+npm install --save-dev typescript
 ```
 
-## Configure package.json for Automatic Compilation
+3. **Configure package.json for Automatic Compilation**
 To streamline your build process, update the package.json 
 file with the following scripts:
 ```json  
 "scripts": {
-    "compile": "tsc",
-    "bundle-js": "your-bundling-command",  //(Optional) Add your bundling command here.
-    "build": "npm run compile && npm run bundle-js" / Only use 'npm run compile' if you dont have a bundle-js.
+  "compile": "tsc",
+  "start": "node dist/<entry-file>.js",  // Adjust <entry-file> to your actual entry file
+  "build": "npm run compile && npm start"
 },
 ```
-Replace "your-bundling-command" with the actual command you 
-use to bundle your JavaScript files if applicable.
+Replace <entry-file> with the actual entry file of your application.
 
-## Compile and Bundle TypeScript Files
-For a comprehensive build process that both compiles and 
-bundles TypeScript files, run:
+Optionally, if you have a bundling step, add a "bundle-js" script with your bundling command:
+```json  
+"scripts": {
+  "compile": "tsc",
+  "bundle-js": "your-bundling-command",
+  "start": "node dist/<entry-file>.js",
+  "build": "npm run compile && npm run bundle-js && npm start"
+},
+```
+Replace "your-bundling-command" with the actual command you use to bundle your JavaScript files.
+
+4. **Run npm Build:**
+- Now, you can run the build command:
 ```node
-  npm run build
+npm run build
 ```
 This command executes the compilation script and any additional
 bundling steps defined in your package.json file.
+
+--------------------------------------------------------------------------
 
 ## Automatically compile/build your TypeScript files
 To automatically compile your TypeScript files whenever 

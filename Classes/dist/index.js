@@ -65,10 +65,19 @@ const task2 = new Task(101, "Buy Bread", "Go to the bakery and buy bread", false
 const task3 = new Task(102, "Buy Butter", "Go to the store and buy butter", false);
 // Add the tasks to the task manager
 taskManager.addTask(task1);
-taskManager.addTask(task2);
 // Update the task
 // Mark task as completed
 // Delete a task
 // Get all the tasks
 const getAllTasks = taskManager.getAllTasks();
-console.log('getAllTasks', getAllTasks);
+console.log("getAllTasks", getAllTasks);
+// get the task container
+// use 'as HTMLDivElement' to tell typescript that the taskContainer is a HTMLDivElement
+const taskContainer = document.querySelector(".task_container");
+//or '<HTMLDivElement>' to tell typescript that the taskContainer is a HTMLDivElement
+// const taskContainer2 = <HTMLDivElement>document.querySelector('.task_container');
+// create the task cards
+const taskMainDive = document.createElement("div");
+taskMainDive.className = "task_card";
+// create the task card body: title, description, completion button
+const taskCardBody = document.createElement("div");
